@@ -41,17 +41,7 @@ string decimalTohHexadecimal(int n){
     }
     return ans;
 }
-int reverseNumber(int n){
-    int lastDig, reverse=0;
-
-    while(n>0){
-        lastDig = n%10;
-        reverse = reverse*10+ lastDig;
-        n/=10;
-    }
-    return reverse;
-}
-int DecimalToOctal(int n){
+int decimalToOctal(int n){
     int bit=1,  result=0;
 
     while(bit<=n)
@@ -66,7 +56,7 @@ int DecimalToOctal(int n){
     }
     return result;
 }
-int OctalToDecimal(int n){
+int octalToDecimal(int n){
     int lastDigit, power=0, result=0;
 
     while(n>0){
@@ -77,7 +67,7 @@ int OctalToDecimal(int n){
     }
     return result;
 }
-int DecimalToBinary(int n){
+int decimalToBinary(int n){
     //There are two way to solve this problem
     //both have time complexity o(n)
     //Second solution based on "reverse the number" solution.
@@ -106,7 +96,7 @@ int DecimalToBinary(int n){
     }*/
     return reverse;
 }
-int BinaryToDecimal(int n){
+int binaryToDecimal(int n){
     int lastDigit, power=0, result=0;
 
     while(n>0){
@@ -127,11 +117,20 @@ int addBinary(int a, int b){
 
     return DecimalToBinary(z);
 }
+int reverseNumber(int n){
+    int lastDig, reverse=0;
 
+    while(n>0){
+        lastDig = n%10;
+        reverse = reverse*10+ lastDig;
+        n/=10;
+    }
+    return reverse;
+}
 int main(){
     int num, num2;
     cin>>num>>num2;
-    //int result = OctalToDecimal(num);
+    //int result = octalToDecimal(num);
     
 
 
