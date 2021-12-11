@@ -42,16 +42,16 @@ string decimalTohHexadecimal(int n){
     return ans;
 }
 int decimalToOctal(int n){
-    int bit=1,  result=0;
+    int base=1,  result=0;
 
-    while(bit<=n)
-        bit*=8;
-    bit/=8;
+    while(base<=n)
+        base*=8;
+    base/=8;
 
-    while(bit>0){
-        int lastDigit = n/bit;
-        n -=lastDigit*bit;
-        bit/=8;
+    while(base>0){
+        int lastDigit = n/base;
+        n -=lastDigit*base;
+        base/=8;
         result = result* 10 + lastDigit;
     }
     return result;
@@ -71,16 +71,16 @@ int decimalToBinary(int n){
     //There are two way to solve this problem
     //both have time complexity o(n)
     //Second solution based on "reverse the number" solution.
-    int bit=1, number=0, reverse=0;
+    int base=1, number=0, reverse=0;
 
-    while(bit<=n)
-        bit*=2;
-    bit/=2;
+    while(base<=n)
+        base*=2;
+    base/=2;
 
-    while(bit>0){
-        int lastDigit = n/bit;
-        n -=lastDigit*bit;
-        bit/=2;
+    while(base>0){
+        int lastDigit = n/base;
+        n -=lastDigit*base;
+        base/=2;
         reverse = reverse* 10 + lastDigit;
     }
 
